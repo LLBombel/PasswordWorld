@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rafalropel.passwordworld.databinding.ItemRowBinding
 
 class PasswordAdapter(private val items: ArrayList<PasswordEntity>,
-                      //private val updateListener:(id:Int)->Unit,
-                      //private val deleteListener:(id:Int)->Unit)
+                      private val updateListener:(id:Int)->Unit,
+                      private val deleteListener:(id:Int)->Unit
 ):RecyclerView.Adapter<PasswordAdapter.ViewHolder>() {
 
 
@@ -37,11 +37,11 @@ class PasswordAdapter(private val items: ArrayList<PasswordEntity>,
             holder.llMain.setBackgroundColor(ContextCompat.getColor(holder.itemView.context, R.color.white))
         }
         holder.ivEdit.setOnClickListener{
-            //updateListener.invoke(item.id)
+            updateListener.invoke(item.id)
         }
 
         holder.ivDelete.setOnClickListener{
-            //deleteListener.invoke(item.id)
+            deleteListener.invoke(item.id)
         }
     }
 

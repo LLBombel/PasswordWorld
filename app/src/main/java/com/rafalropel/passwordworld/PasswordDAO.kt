@@ -21,6 +21,6 @@ suspend fun delete(passwordEntity: PasswordEntity)
 fun fetchAllData():Flow<List<PasswordEntity>>
 
 @Query("SELECT * FROM  `passwords-table` where id=:id"  )
-fun fetchDataById(id: Int):Flow<List<PasswordEntity>>
+fun fetchDataById(id: Int):Flow<PasswordEntity>
 
 }
